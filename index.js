@@ -192,7 +192,7 @@ var deck_url       = "bit.ly/tonsky-riga",
     // slides_prefix: "file:///Users/prokopov/Dropbox/Public/conferences/2017.05%20RigaDevDays/jpegs/", 
     // slides_prefix  = "http://s.tonsky.me/conferences/2017.05%20RigaDevDays/jpegs/",
     slides_prefix  = "jpegs/",
-    slides         = ["110.jpg", "120.jpg", "122.jpg", "124.jpg", "126.jpg", "130.jpg", "140.jpg", "142.jpg", "144.jpg", "146.jpg", "150.jpg", "160.jpg", "162.jpg", "164.jpg", "170.jpg", "210.jpg", "220.jpg", "225.jpg", "230.jpg", "240.jpg", "280.jpg", "310.jpg", "320.jpg", "330.jpg", "340.jpg", "350.jpg", "360.jpg", "370.jpg", "380.jpg", "390.jpg", "410.jpg", "420.jpg", "430.jpg", "450.jpg", "455.jpg", "460.jpg", "461.jpg", "462.jpg", "463.jpg", "464.jpg", "465.jpg", "466.jpg", "470.jpg", "480.jpg", "510.jpg", "512.jpg", "514.jpg", "516.jpg", "518.jpg", "520.jpg", "522.jpg", "524.jpg", "526.jpg", "527.jpg", "528.jpg", "530.jpg", "532.jpg", "540.jpg", "550.jpg", "560.jpg", "570.jpg", "580.jpg", "590.jpg", "610.jpg", "612.jpg", "614.jpg", "616.jpg", "618.jpg", "620.jpg", "622.jpg", "624.jpg", "626.jpg", "640.jpg", "643.jpg", "645.jpg", "647.jpg", "650.jpg", "660.jpg", "670.jpg", "672.jpg", "674.jpg", "676.jpg", "680.jpg", "710.jpg", "720.jpg", "725.jpg", "730.jpg", "740.jpg", "750.jpg", "760.jpg", "770.jpg", "810.jpg", "812.jpg", "814.jpg", "816.jpg", "818.jpg", "820.jpg", "825.jpg", "830.jpg", "832.jpg", "834.jpg", "836.jpg", "838.jpg", "840.jpg", "850.jpg", "860.jpg", "862.jpg", "870.jpg", "872.jpg", "880.jpg", "882.jpg", "884.jpg", "910.jpg", "915.jpg", "920.jpg", "930.jpg", "940.jpg", "942.jpg", "944.jpg", "946.jpg", "948.jpg", "960.jpg"],
+    slides         = ["110.jpg", "120.jpg", "122.jpg", "124.jpg", "126.jpg"],// , "130.jpg", "140.jpg", "142.jpg", "144.jpg", "146.jpg", "150.jpg", "160.jpg", "162.jpg", "164.jpg", "170.jpg", "210.jpg", "220.jpg", "225.jpg", "230.jpg", "240.jpg", "280.jpg", "310.jpg", "320.jpg", "330.jpg", "340.jpg", "350.jpg", "360.jpg", "370.jpg", "380.jpg", "390.jpg", "410.jpg", "420.jpg", "430.jpg", "450.jpg", "455.jpg", "460.jpg", "461.jpg", "462.jpg", "463.jpg", "464.jpg", "465.jpg", "466.jpg", "470.jpg", "480.jpg", "510.jpg", "512.jpg", "514.jpg", "516.jpg", "518.jpg", "520.jpg", "522.jpg", "524.jpg", "526.jpg", "527.jpg", "528.jpg", "530.jpg", "532.jpg", "540.jpg", "550.jpg", "560.jpg", "570.jpg", "580.jpg", "590.jpg", "610.jpg", "612.jpg", "614.jpg", "616.jpg", "618.jpg", "620.jpg", "622.jpg", "624.jpg", "626.jpg", "640.jpg", "643.jpg", "645.jpg", "647.jpg", "650.jpg", "660.jpg", "670.jpg", "672.jpg", "674.jpg", "676.jpg", "680.jpg", "710.jpg", "720.jpg", "725.jpg", "730.jpg", "740.jpg", "750.jpg", "760.jpg", "770.jpg", "810.jpg", "812.jpg", "814.jpg", "816.jpg", "818.jpg", "820.jpg", "825.jpg", "830.jpg", "832.jpg", "834.jpg", "836.jpg", "838.jpg", "840.jpg", "850.jpg", "860.jpg", "862.jpg", "870.jpg", "872.jpg", "880.jpg", "882.jpg", "884.jpg", "910.jpg", "915.jpg", "920.jpg", "930.jpg", "940.jpg", "942.jpg", "944.jpg", "946.jpg", "948.jpg", "960.jpg"],
     slides_ratio = 16/9,
     slides_loaded = 0,
     slides_failed = 0,
@@ -234,7 +234,8 @@ database.ref(".info/serverTimeOffset").on("value", (s) => clock_skew = s.val());
 
 var $speaker_slide    = new LWW($root.child("speaker_slide"), slides[0], on_speaker_slide_change),
     current_slide_idx = 0,
-    last_revealed_idx = is_speaker ? slides.length - 1 : 0,
+    last_revealed_idx = 0,
+    last_idx          = slides.length - 1,
     is_following      = true;
 
 
@@ -249,7 +250,7 @@ function on_speaker_slide_change(speaker_slide) {
 
 
 function change_slide(delta) {
-  var new_idx = Math.max(0, Math.min(last_revealed_idx, current_slide_idx + delta));
+  var new_idx = Math.max(0, Math.min(is_speaker ? last_idx : last_revealed_idx, current_slide_idx + delta));
   if (new_idx !== current_slide_idx) {
     if (is_speaker)
       $speaker_slide.set(slides[new_idx]);
@@ -411,7 +412,7 @@ const GoBack = () => {
 
 
 const GoForward = () => {
-  return current_slide_idx >= last_revealed_idx ? null :
+  return current_slide_idx >= (is_speaker ? last_idx : last_revealed_idx) ? null :
     h("div", { key: "go_forward",
                class: "go go_forward",
                style: { width:  (screen_width - deck_width) / 2 + deck_width * 0.33333333,
@@ -544,7 +545,7 @@ class Question extends Component {
     return h("div", { class: "question" }, 
              h("div", { class: "question-text" }, q.text),
              upvotes.size > 0 ? h("div", { class: "question-upvotes" }, upvotes.size) : null,
-             upvoted ? null : h("div", { class: "button question-upvote-button" + (upvotes.size === 0 ? " question-upvote-button_right" : ""),
+             upvoted || is_speaker ? null : h("div", { class: "button question-upvote-button" + (upvotes.size === 0 ? " question-upvote-button_right" : ""),
                                          onclick: () => $upvotes.add(user_id) }));
   }
 }
@@ -591,14 +592,14 @@ class App extends Component {
                h(StatusBar),
                is_speaker ? null : h(FollowButton),
                is_speaker ? null : h(LikeButton),
-               is_speaker ? null : h(AskButton), 
+               is_speaker && last_revealed_idx < last_idx ? null : h(AskButton), 
                (is_speaker && slides_loaded + slides_failed < slides.length ? h(PreloadStatus, {}) : null));
     else if (screen === "ask")
       return h("div", { class: "app app_ask" },
                h("div", { class: "app-inner_ask" },
                  h(QuitAskButton),
-                 h(AskForm),
-                 h("div", { class: "questions-hr" }),
+                 is_speaker ? null : h(AskForm),
+                 is_speaker ? null : h("div", { class: "questions-hr" }),
                  h(Questions) ));
   }
 }
