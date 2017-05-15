@@ -10,6 +10,9 @@ body { background: #f4f4f4; color: #58656E; }
 .loader { position: absolute; top: 0; left: 0; bottom: 0; right: 0; display: flex; align-items: center; justify-content: center; }
 .loader-inner { background: #f4f4f4; padding: 1em 2em; }
 
+.progress { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: transparent; }
+.progress-inner { height: 2px; background: #58656E; }
+
 .app { position: absolute; }
 .deck { overflow: hidden; position: absolute; }
 
