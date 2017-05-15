@@ -1,0 +1,22 @@
+<svg width="44" height="44" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>upvote</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-78 0)">
+ clip-path="url(#clip-0)"<g id="upvote">
+<g id="Vector 7">
+<use xlink:href="#path0_fill" transform="matrix(1.16743e-16 -1 -1 -1.16743e-16 103 36)" fill="#58656E"/>
+<use xlink:href="#path1_fill" transform="matrix(1.16743e-16 -1 -1 -1.16743e-16 103 36)" fill="#58656E"/>
+<use xlink:href="#path2_fill" transform="matrix(1.16743e-16 -1 -1 -1.16743e-16 103 36)" fill="#58656E"/>
+<use xlink:href="#path3_fill" transform="matrix(1.16743e-16 -1 -1 -1.16743e-16 103 36)" fill="#58656E"/>
+<use xlink:href="#path4_stroke" transform="matrix(1.16743e-16 -1 -1 -1.16743e-16 103 36)" fill="#58656E"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 3 3L 8 3L 5 0L 0 0Z"/>
+<path id="path1_fill" d="M 8 3L 3 3L 0 6L 5 6L 8 3Z"/>
+<path id="path2_fill" d="M 23 3L 23 5.5L 28 3L 23 3Z"/>
+<path id="path3_fill" d="M 28 3L 23 0.5L 23 3L 28 3Z"/>
+<path id="path4_stroke" d="M 28 3L 28.4472 3.89443L 30.2361 3L 28.4472 2.10557L 28 3ZM 23 0.5L 23.4472 -0.394427L 22 -1.11803L 22 0.5L 23 0.5ZM 23 5.5L 22 5.5L 22 7.11803L 23.4472 6.39443L 23 5.5ZM 0 0L 0 -1L -2.41421 -1L -0.707107 0.707107L 0 0ZM 5 0L 5.70711 -0.707107L 5.41421 -1L 5 -1L 5 0ZM 5 6L 5 7L 5.41421 7L 5.70711 6.70711L 5 6ZM 0 6L -0.707107 5.29289L -2.41421 7L 0 7L 0 6ZM 28.4472 2.10557L 23.4472 -0.394427L 22.5528 1.39443L 27.5528 3.89443L 28.4472 2.10557ZM 23.4472 6.39443L 28.4472 3.89443L 27.5528 2.10557L 22.5528 4.60557L 23.4472 6.39443ZM 3.70711 2.29289L 0.707107 -0.707107L -0.707107 0.707107L 2.29289 3.70711L 3.70711 2.29289ZM 0 1L 5 1L 5 -1L 0 -1L 0 1ZM 3 4L 8 4L 8 2L 3 2L 3 4ZM 4.29289 0.707107L 7.29289 3.70711L 8.70711 2.29289L 5.70711 -0.707107L 4.29289 0.707107ZM 7.29289 2.29289L 4.29289 5.29289L 5.70711 6.70711L 8.70711 3.70711L 7.29289 2.29289ZM 5 5L 0 5L 0 7L 5 7L 5 5ZM 0.707107 6.70711L 3.70711 3.70711L 2.29289 2.29289L -0.707107 5.29289L 0.707107 6.70711ZM 22 3L 22 5.5L 24 5.5L 24 3L 22 3ZM 28 2L 23 2L 23 4L 28 4L 28 2ZM 22 0.5L 22 3L 24 3L 24 0.5L 22 0.5ZM 18.4558 4L 23 4L 23 2L 18.4558 2L 18.4558 4ZM 8 4L 10.0711 4L 10.0711 2L 8 2L 8 4ZM 18.4558 2L 10.0711 2L 10.0711 4L 18.4558 4L 18.4558 2Z"/>
+</defs>
+</svg>

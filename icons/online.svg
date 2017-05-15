@@ -1,0 +1,25 @@
+<svg width="55" height="40" viewBox="0 0 55 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>online</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-13 73)" figma:type="canvas">
+<mask id="mask0_alpha" mask-type="alpha">
+<path d="M 13 -73L 68 -73L 68 -33L 13 -33L 13 -73Z" fill="#FFFFFF"/>
+</mask>
+<g id="online" mask="url(#mask0_alpha)" figma:type="frame">
+<g id="Vector 3" figma:type="vector">
+<use xlink:href="#path0_stroke" transform="translate(26 -61)" fill="#FFFFFF"/>
+</g>
+<g id="Subtract" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(30 -58.1406)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse 3" figma:type="ellipse">
+<use xlink:href="#path2_fill" transform="translate(35.5 -57.5)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 0 9.00001L -0.664428 8.6521L -0.846593 9.00001L -0.664428 9.34791L 0 9.00001ZM 29 9L 29.6644 9.3479L 29.8466 9L 29.6644 8.6521L 29 9ZM 0.664428 9.34791C 6.66704 -2.11597 22.333 -2.11597 28.3356 9.3479L 29.6644 8.6521C 23.1004 -3.88404 5.89963 -3.88403 -0.664428 8.6521L 0.664428 9.34791ZM 28.3356 8.6521C 22.333 20.116 6.66704 20.116 0.664428 8.6521L -0.664428 9.34791C 5.89963 21.884 23.1004 21.884 29.6644 9.3479L 28.3356 8.6521Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 6.07033C 4.55 -2.02344 16.45 -2.02344 21 6.07032C 16.45 14.1641 4.55 14.1641 0 6.07033ZM 10.5 11.1406C 13.5376 11.1406 16 8.67821 16 5.64065C 16 2.60308 13.5376 0.140645 10.5 0.140645C 7.46243 0.140645 5 2.60308 5 5.64065C 5 8.67821 7.46243 11.1406 10.5 11.1406Z"/>
+<path id="path2_fill" d="M 5 2.5C 5 3.88071 3.88071 5 2.5 5C 1.11929 5 0 3.88071 0 2.5C 0 1.11929 1.11929 0 2.5 0C 3.88071 0 5 1.11929 5 2.5Z"/>
+</defs>
+</svg>
